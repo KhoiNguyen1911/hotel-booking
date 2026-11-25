@@ -3,6 +3,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import StatusBadge from "@/components/StatusBadge";
 import { LogoutButton } from "@/components/AdminClient";
+import AccountSettings from "@/components/AccountSettings";
 import { requireUser } from "@/lib/auth";
 import { listBookingsByEmail, nightsBetween } from "@/lib/db";
 import { vnd, dateVN } from "@/lib/format";
@@ -64,6 +65,8 @@ export default async function AccountPage({ searchParams }) {
             ))}
           </ul>
         )}
+
+        <AccountSettings user={user} />
 
         <div className="mt-12 border-t border-line pt-6">
           <LogoutButton tone="dark" />
